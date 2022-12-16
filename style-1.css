@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15%;
+    height: 100%;
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav h1 {
+    margin-left: 10px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    width: 20%;
+    justify-content: space-evenly;
+    margin-right: 10%;
+}
+
+nav li {
+    display: inline-flex;
+    text-decoration: none;
+}
+
+#aboutme {
+    display: flex;
+    position: relative;
+    top: 60px;
+}
+
+#aboutme text {
+
+}
+
+#mainpic {
+    display: flex;
+    height: auto;
+    width: 33%;
+}
