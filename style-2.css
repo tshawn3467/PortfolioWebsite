@@ -1,0 +1,67 @@
+/*Projectspage.html CSS*/
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    margin: 0rem;
+}
+
+#navContainer {
+    position: fixed;
+    width:100%;
+    /*testing below*/
+    position: fixed;
+    z-index: 10;
+    background-color: yellow;
+    opacity: .5;
+}
+
+nav {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav ul {
+    display: inline-flex;
+    width: 100%;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+#navContainer h1 {
+    text-align: center;
+}
+
+#websiteContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /*testing below*/
+    position: sticky;
+    top: 8.1rem;
+    height: 47rem;
+    background-color: lightgray;
+    opacity: .5;
+    z-index: 2;
+}
+
+#javascriptContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /*testing below*/
+    position: sticky;
+    top: 8.1rem;
+    height: 39.2rem;
+    background-color: lightblue;
+    z-index: 1;
+}
