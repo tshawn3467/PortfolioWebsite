@@ -2,49 +2,60 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 15%;
-    height: 100%;
+    margin: 0rem 15%;
+    height: 47rem;
 }
 
-nav {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    display: inline-flex;
-    justify-content: space-between;
+navContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
     width: 100%;
 }
 
-nav h1 {
-    margin-left: 10px;
+navContainer h1 {
+    width:50%;
+}
+
+nav {
+    display: flex;
+    width: 50%;
 }
 
 nav ul {
-    display: flex;
-    align-items: center;
-    padding: 0px;
-    width: 20%;
+    display: inline-flex;
+    list-style: none;
     justify-content: space-evenly;
-    margin-right: 10%;
+    width: 100%;
 }
 
-nav li {
-    display: inline-flex;
+nav a {
     text-decoration: none;
 }
 
-#aboutme {
-    display: flex;
-    position: relative;
-    top: 60px;
+#navLine {
+    border-top: .2rem solid;
+    width: 100%;
 }
 
-#aboutme text {
+#aboutMe {
+    display: flex;
+    position: relative;
+}
 
+#aboutMeText {
+    height: auto;
+    width: 50%;
 }
 
 #mainpic {
-    display: flex;
     height: auto;
-    width: 33%;
+    width: 50%;
+}
+
+#footer {
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.75rem;
 }
