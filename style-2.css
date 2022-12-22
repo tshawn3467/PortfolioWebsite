@@ -100,6 +100,7 @@ nav a {
 #javascriptButton {
     text-align: center;
     padding: 1rem;
+    margin: 0;
 }
 
 #javascriptButtonContainer {
