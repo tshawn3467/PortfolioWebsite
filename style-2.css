@@ -10,11 +10,10 @@ body {
 #navContainer {
     position: fixed;
     width:100%;
-    /*testing below*/
     position: fixed;
     z-index: 10;
-    background-color: yellow;
-    opacity: .5;
+    background-color: white;
+    border-bottom: 2px solid;
 }
 
 nav {
@@ -22,6 +21,7 @@ nav {
     width: 100%;
     justify-content: space-evenly;
     align-items: center;
+    border-bottom: 2px solid;
 }
 
 nav ul {
@@ -41,16 +41,48 @@ nav a {
 
 #websiteContainer {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    align-items: center;
-    justify-content: center;
-    /*testing below*/
     position: sticky;
     top: 8.1rem;
     height: 47rem;
-    background-color: lightgray;
-    opacity: .5;
-    z-index: 2;
+    z-index: 1;
+    background-color: white;
+}
+
+#websiteContainer h2 {
+    width: 100%;
+    text-align: center;
+    height: 4%;
+}
+
+.pageBlocksContainerTop {
+    display: flex;
+    position: relative;
+    top: 1rem;
+    width: 100%; 
+    height: 25%;
+    justify-content: space-around;   
+    align-items: center;
+}
+
+.pageBlocksContainerBottom {
+    display: flex;
+    position: relative;
+    bottom: 2rem;
+    width: 100%; 
+    height: 25%;
+    justify-content: space-around;   
+    align-items: center;
+}
+
+.pageBlocks {
+    height: 100%;
+    align-items: center;
+    border: 1px solid black;
+    width: 15%;
+    display: flex;
+    justify-content: center;
 }
 
 #javascriptContainer {
@@ -58,10 +90,52 @@ nav a {
     width: 100%;
     align-items: center;
     justify-content: center;
-    /*testing below*/
     position: sticky;
     top: 8.1rem;
     height: 39.2rem;
-    background-color: lightblue;
-    z-index: 1;
+    z-index: 3;
+    background-color: white;
+}
+
+#javascriptButton {
+    text-align: center;
+    padding: 1rem;
+}
+
+#javascriptButtonContainer {
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+
+#javascriptProjects {
+    display: none;
+    position: fixed;
+    flex-wrap: wrap;
+    top: 8.1rem;
+    height: 39.2rem;
+    width: 100%;
+    justify-content: space-around;
+    z-index: 5;
+}
+
+.jsProjectContainer {
+    height: 90%;
+    width: 30%;
+    border: 2px solid black;
+    /*below for visibility*/
+    background-color: aqua;
+}
+
+#returnButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#returnButtonText {
+    width: 30%;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: .25rem;
 }
