@@ -1,0 +1,107 @@
+.nav {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.nav li {
+    display: inline;
+    margin: 0px 50px;
+}
+
+.top-banner {
+    text-align: center;
+    background-color: lightgray;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.button li{
+    display: inline;
+    color: black;
+    padding: 0px 20px;
+    position:relative;
+    left: 42%;
+    margin: 0px 1px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: burlywood;
+}
+
+.color {
+    background-color: lightgray;
+    border: 2px solid black;
+    width: 100%;
+}
+
+.color td {
+    text-align: center;
+    height: 200px;
+    width: 400px;
+}
+
+.first-color {
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+.second-color {
+    border: 1px solid black;
+    background-color: #d2691e;
+}
+
+.third-color {
+    border: 1px solid black;
+    background-color: rgb(220, 20, 60);
+}
+
+.fourth-color {
+    border: 1px solid black;
+    background-color:rgb(143, 188, 143);
+}
+
+.fifth-color {
+    border: 1px solid black;
+    background-color:rgb(255, 215, 0);
+}
+
+.sixth-color {
+    border: 1px solid black;
+    background-color:rgb(148, 0, 211);
+}
+
+.font {
+    background-color: lightgray;
+    height: 300px;
+    width: 100%;
+    border: 2px solid black;
+    font-size: 24px;
+    text-align: center;
+}
+
+.font td {
+    border: 1px solid black;
+}
+
+.first-font td {
+    font-family: 'Fasthand', cursive;
+}
+
+.second-font td {
+    font-family: 'Lobster', cursive;
+}
+
+.third-font td {
+    font-family: 'Comfortaa', cursive;
+}
+
+.fourth-font td {
+    font-family: 'Secular One', sans-serif;
+}
+
+.text {
+    background-color: lightgray;
+    border: 2px solid black;
+}
