@@ -1,36 +1,52 @@
-let idealSleep = [["Monday"], ["Tuesday"], ["Wednesday"], ["Thursday"], ["Friday"]];
+function output() {
+document.getElementById("initialText").remove();
+
+let idealSleep = [['Monday'], ['Tuesday'], ['Wednesday'], ['Thursday'], ['Friday']];
 let actualSleep = [[1,2], [1,2], [1,2], [1,2], [1,2]];
 
-for (let step = 0; step < 5; step++) {
-  console.log("Enter ideal sleep hours for " + idealSleep[step] + ':');
+for (step = 0; step < 5; step++) {
+  //console.log("Enter ideal sleep hours for " + idealSleep[step] + ':');
   idealSleep[step][1] = Math.floor(Math.random() * (13-6) + 6);
 }
-console.log(idealSleep);
+//console.log(idealSleep);
 
-for (let step = 0; step < 5; step++) {
-  console.log('Enter actual sleep hours for ' + idealSleep[step][0] + ':');
+for (step = 0; step < 5; step++) {
+  //console.log('Enter actual sleep hours for ' + idealSleep[step][0] + ':');
   actualSleep[step][0] = idealSleep[step][0];
   actualSleep[step][1] = Math.floor(Math.random() * 13);
 }
-console.log(actualSleep);
+//console.log(actualSleep);
 
 function calculateSleep(ideal, actual) {
   let total = ideal - actual;
   if (total > 0) {
-    let result = `you missed ${total} hours of sleep.`;
+    let result = 'you missed ' + total + ' hours of sleep.';
     return result;
   } else if (total === 0) {
-    let result = `you got the ideal amount of sleep.`;
+    let result = 'you got the ideal amount of sleep.';
     return result;
   } else if (total < 0) {
     total = Math.abs(total);
-    let result = `you over-slept ${total} hours.`;
+    let result = 'you over-slept ' + total  + ' hours.';
     return result;
-  } else {
+  } /*else {
     console.log('Invalid self-destruct initiated!');
-  }
+  }*/
 }
 
-for (let step = 0; step < 5; step++) {
-  console.log('On ' + idealSleep[step][0] + ' ' + calculateSleep(idealSleep[step][1], actualSleep[step][1]));
+
+for (step = 0; step < 5; step++) {
+  //console.log('On ' + idealSleep[step][0] + ' ' + calculateSleep(idealSleep[step][1], actualSleep[step][1]));
+  let jsCodeOutput = document.getElementById("jsCodeOutput");
+  let p = document.createElement("p");
+  p.style.marginLeft = "5rem";
+  p.textContent = "On " + idealSleep[step][0] + " " + calculateSleep(idealSleep[step][1], actualSleep[step][1]);
+  jsCodeOutput.appendChild(p);   
 }
+
+
+}
+
+
+let button = document.getElementById("sleepDebtCalculator");
+button.addEventListener("click", output);

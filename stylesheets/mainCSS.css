@@ -1,4 +1,7 @@
 /*Mainpage.html CSS*/
+html {
+    background-color: black;
+}
 
 body {
     display: flex;
@@ -6,6 +9,8 @@ body {
     justify-content: center;
     margin: 0rem 15%;
     height: 47rem;
+    min-width: 70rem;
+    background-color: antiquewhite;
 }
 
 navContainer {
@@ -23,6 +28,7 @@ navContainer h1 {
 nav {
     display: flex;
     width: 50%;
+    margin-top: 1rem;
 }
 
 nav ul {
@@ -41,6 +47,13 @@ nav a {
     width: 100%;
 }
 
+#resumeTitle {
+    margin: 0rem;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+}
+
 #aboutMe {
     display: flex;
     position: relative;
@@ -49,6 +62,8 @@ nav a {
 #aboutMeText {
     height: auto;
     width: 50%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 #aboutMeText h2 {

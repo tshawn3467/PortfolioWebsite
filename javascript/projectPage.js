@@ -11,6 +11,7 @@ let mealMaker = document.getElementById("mealMaker");
 let whaleTalk = document.getElementById("whaleTalk");
 let mysteriousOrganisms = document.getElementById("mysteriousOrganisms");
 let mixedMessages = document.getElementById("mixedMessages");
+let jsCodeOutput = document.getElementById("jsCodeOutput");
 
 
 //Javascript button effects
@@ -38,6 +39,8 @@ function returnPage() {
     javascriptProjectPage.style.display = "none";
     webpageSection.style.display = "flex";
     javascriptSection.style.display = "flex";
+    document.getElementById("jsCodeText").innerHTML = "<p id='initialText'>SELECT A PROGRAM ON THE LEFT TO VIEW THE CODE HERE</p>";
+    document.getElementById("jsCodeOutput").innerHTML = "<p id='initialText'>VIEW OUTPUT OF SELECTED PROGRAM HERE</p>";
 }
 
 javascriptButton.addEventListener("click", revealPage);
@@ -322,3 +325,392 @@ let mixedMessagesText =
 "<p>\nThe weather for today is ${weather[0][randomNumber(weather[0].length)]} with a chance of ${weather[1][randomNumber(weather[1].length)]}. </p>" +
 "<p>\nThe quote of the day is: ${dailyQuote[randomNumber(dailyQuote.length)]}`);</p>" +
 "<p>printIt();</p>";
+
+
+//Javascript projects modified to display output in HTML when button is clicked
+
+//Rock Paper Scissors
+function rockPaperScissorsOutput() {
+    jsCodeOutput.innerHTML = " ";
+
+    function choose(play) {
+        let roll = Math.floor(Math.random() * 3);
+      
+        switch (roll) {
+          case 0:
+            play = "rock";
+            break;
+          case 1:
+            play = "paper";
+            break;
+          case 2:
+            play = "scissors";
+            break;
+          default:
+            console.log("Invalid roll");
+            break;
+        }
+        return play;
+    }
+      
+      function winner(user, comp) {
+        let win;
+        if (user === "rock" && comp === "rock") {
+          return (win = "TIE");
+        } else if (user === "rock" && comp === "paper") {
+          return (win = "COMPUTER WINS");
+        } else if (user === "rock" && comp === "scissors") {
+          return (win = "YOU WIN");
+        } else if (user === "paper" && comp === "rock") {
+          return (win = "YOU WIN");
+        } else if (user === "paper" && comp === "paper") {
+          return (win = "TIE");
+        } else if (user === "paper" && comp === "scissors") {
+          return (win = "COMPUTER WINS");
+        } else if (user === "scissors" && comp === "rock") {
+          return (win = "COMPUTER WINS");
+        } else if (user === "scissors" && comp === "paper") {
+          return (win = "YOU WIN");
+        } else if (user === "scissors" && comp === "scissors") {
+          return (win = "TIE");
+        }
+    }
+      
+    let user = choose();
+    let comp = choose();
+    let victor = winner(user, comp);
+      
+    
+    jsCodeOutput.innerHTML = "<p>You throw " + user + " and computer throws " + comp + ".</p>" +
+    "<p>" + victor + "</p>";
+    jsCodeOutput.style.textAlign="center";
+}
+    
+rockPaperScissors.addEventListener("click", rockPaperScissorsOutput);
+
+
+//sleepDebtCalculator
+function sleepDebtCalculatorOutput() {
+    jsCodeOutput.innerHTML = " ";
+    jsCodeOutput.style.textAlign = "left";
+
+    
+    let idealSleep = [['Monday'], ['Tuesday'], ['Wednesday'], ['Thursday'], ['Friday']];
+    let actualSleep = [[1,2], [1,2], [1,2], [1,2], [1,2]];
+    
+    for (step = 0; step < 5; step++) {
+      //console.log("Enter ideal sleep hours for " + idealSleep[step] + ':');
+      idealSleep[step][1] = Math.floor(Math.random() * (13-6) + 6);
+    }
+    
+    for (step = 0; step < 5; step++) {
+      //console.log('Enter actual sleep hours for ' + idealSleep[step][0] + ':');
+      actualSleep[step][0] = idealSleep[step][0];
+      actualSleep[step][1] = Math.floor(Math.random() * 13);
+    }
+    
+    function calculateSleep(ideal, actual) {
+      let total = ideal - actual;
+      if (total > 0) {
+        let result = 'you missed ' + total + ' hours of sleep.';
+        return result;
+      } else if (total === 0) {
+        let result = 'you got the ideal amount of sleep.';
+        return result;
+      } else if (total < 0) {
+        total = Math.abs(total);
+        let result = 'you over-slept ' + total  + ' hours.';
+        return result;
+      } else {
+        jsCodeOutput.innerHTML = 'Invalid self-destruct initiated!';
+      }
+    }
+    
+    
+    for (step = 0; step < 5; step++) {
+      let p = document.createElement("p");
+      p.style.marginLeft = "5rem";
+      p.textContent = "On " + idealSleep[step][0] + " " + calculateSleep(idealSleep[step][1], actualSleep[step][1]);
+      jsCodeOutput.appendChild(p);   
+    }
+    
+}
+    
+sleepDebtCalculator.addEventListener("click", sleepDebtCalculatorOutput);
+
+
+//Meal Maker
+function mealMakerOutput() {
+    jsCodeOutput.innerHTML = " ";
+    jsCodeOutput.style.textAlign = "left";
+    //Project Meal Maker
+
+    //dish factory
+    const dish = (entree, side, veggie) => {
+        return {
+        entree,
+        side,
+        veggie
+        }
+    };
+    
+    //random dish creator
+    const listEntrees = [['Steak','$12'], ['Salmon', '$15'], ['Chicken', '$10'], ['Pork', '$11']];
+    const listSides = ['Potatos', 'Soup', 'Salad', 'Rice'];
+    const listVeggies = ['Corn', 'Green Beans', 'Asparagus', 'Carrots'];
+    
+    function dishCreator(obj)  {
+        obj = dish(listEntrees[Math.floor(Math.random() * listEntrees.length)], listSides[Math.floor(Math.random() * listSides.length)], listVeggies[Math.floor(Math.random() * listSides.length)]);
+        return obj;
+    };
+    
+    //Create menu for weekdays
+    let monday = dishCreator();
+    let tuesday = dishCreator();
+    let wednesday = dishCreator();
+    let thursday = dishCreator();
+    let friday = dishCreator();
+    let weeklyMenu = [['Monday', monday], ['Tuesday', tuesday], ['Wednesday', wednesday], ['Thursday', thursday], ['Friday', friday]];
+    
+    //Print menu for the week
+    for (i = 0; i < weeklyMenu.length; i++) {
+        let a = document.createElement("p");
+        a.style.marginLeft = "2rem";
+        a.textContent = weeklyMenu[i][0] + ':';
+        jsCodeOutput.appendChild(a);
+        
+        let b = document.createElement("p");
+        b.style.marginLeft = "2rem";
+        b.textContent = weeklyMenu[i][1].entree[1];
+        jsCodeOutput.appendChild(b);
+
+        let c = document.createElement("p");
+        c.style.marginLeft = "2rem";
+        c.textContent = weeklyMenu[i][1].entree[0] + ", " + weeklyMenu[i][1].side + ", " + weeklyMenu[i][1].veggie;
+        jsCodeOutput.appendChild(c);
+
+        let d = document.createElement("p");
+        d.style.marginLeft = "2rem";
+        d.textContent = "--------------------------";
+        jsCodeOutput.appendChild(d);
+    }
+    
+    //Random selection
+    let selection = weeklyMenu[Math.floor(Math.random() * weeklyMenu.length)];
+    
+    let e = document.createElement("p");
+    e.style.marginLeft = "2rem";
+    e.textContent = "You chose our special for " + selection[0] + ".";
+    jsCodeOutput.appendChild(e);
+
+    let f = document.createElement("p");
+    f.style.marginLeft = "2rem";
+    f.textContent = "This comes with " + selection[1].entree[0] + " and a side of " + selection[1].side + " and " + selection[1].veggie + ".";
+    jsCodeOutput.appendChild(f);
+
+    let g = document.createElement("p");
+    g.style.marginLeft = "2rem";
+    g.textContent = "Your total comes to " + selection[1].entree[1] + ".";
+    jsCodeOutput.appendChild(g);
+}
+
+mealMaker.addEventListener("click", mealMakerOutput);
+
+
+//Whale Talk
+function whaleTalkOutput() {
+    jsCodeOutput.innerHTML = " ";
+    jsCodeOutput.style.textAlign = "left";
+
+    let translate = 'Turpentine and Turtles';
+
+    function translator(word) {
+    let whaleLanguage = [];
+    word = word.toLowerCase();
+    let combine = '';
+
+    for (let i = 0; i < word.length; i++) {
+        if (word.charAt(i) === 'a') {
+        whaleLanguage.push('a');
+        } else if (word.charAt(i) === 'e') {
+        whaleLanguage.push('ee');
+        } else if (word.charAt(i) === 'i') {
+        whaleLanguage.push('i');
+        } else if (word.charAt(i) === 'o') {
+        whaleLanguage.push('oo');
+        } else if (word.charAt(i) === 'u') {
+        whaleLanguage.push('uu');
+        }
+    }
+
+    for (let i = 0; i < whaleLanguage.length; i++) {
+        combine = combine + whaleLanguage[i];
+    }
+    return combine;
+    }
+
+    jsCodeOutput.innerHTML = "<p style='text-align:center'>Translating 'Turpentine and Turtles' into whale language:</p>" +
+    "<p style='text-align:center'>" + translator(translate) + "</p>";
+}
+
+whaleTalk.addEventListener("click", whaleTalkOutput);
+
+
+//Mysterious Organisms
+function mysteriousOrganismsOutput() {
+    jsCodeOutput.innerHTML = " ";
+    jsCodeOutput.style.textAlign = "left";
+    //Project Mysterious Organisms
+    // Returns a random DNA base
+    const returnRandBase = () => {
+        const dnaBases = ['A', 'T', 'C', 'G']
+        return dnaBases[Math.floor(Math.random() * 4)] 
+    }
+    
+    // Returns a random single strand of DNA containing 15 bases
+    const mockUpStrand = () => {
+        const newStrand = []
+        for (let i = 0; i < 15; i++) {
+        newStrand.push(returnRandBase())
+        }
+        return newStrand
+    }
+    
+    function pAequorFactory(num, dnaArray) {
+        return {
+        _specimenNum: num,
+        _dna: dnaArray,
+    
+        get specimenNum() {
+            return this._specimenNum;
+        },
+    
+        get dna() {
+            return this._dna;
+        },
+    
+        set specimenNum(newNum) {
+            this._specimenNum = newNum;
+        },
+    
+        set dna(newDna) {
+            this._dna = newDna;
+        },
+    
+        mutate() {
+            const mutatedDna = this._dna;
+            const randomIndex = Math.floor(Math.random() * 14)
+            const randomBase = this._dna[randomIndex];
+            let newBase = returnRandBase();
+    
+            if (randomBase===newBase) {
+            do {
+            newBase = returnRandBase();
+            } while (randomBase===newBase);
+            };
+            
+            mutatedDna[randomIndex] = newBase;
+            return mutatedDna;
+        },
+    
+        compareDNA(pAequor) {
+            let common = [];
+            let count = 0;
+    
+            for (i=0; i<15; i++) {
+            if (pAequor._dna[i]===this._dna[i]) {
+                common.push(this._dna[i]);
+                count++;
+            };
+            };
+    
+            if (count>0) {
+            let percent = count/15*100;
+
+            let a = document.createElement("p");
+            a.style.marginLeft = "2rem";
+            a.textContent = "Specimen #1 and specimen #2 have " + percent.toFixed(2) + "% DNA in common.";
+            jsCodeOutput.appendChild(a);
+            }
+        },
+    
+        willLikelySurvive() {
+        let count = 0;
+        let survivePercent = 0;
+        for (i=0; i<15; i++) {
+            if (this._dna[i]==='C' || this._dna[i]==='G') {
+                count++;
+            };
+        };
+        survivePercent = count/15*100;
+        if (survivePercent>=60) {
+            return true;      
+        } else {
+            return false;      
+        };
+        }
+    
+        };
+    };
+    
+    const firstOne = pAequorFactory(1,mockUpStrand());
+    const secondOne = pAequorFactory(2, mockUpStrand());
+
+    let b = document.createElement("p");
+    b.style.marginLeft = "2rem";
+    b.textContent = "First specimen's DNA: " + firstOne._dna;
+    jsCodeOutput.appendChild(b);
+
+    let c = document.createElement("p");
+    c.style.marginLeft = "2rem";
+    c.textContent = "Second specimen's DNA: " + secondOne._dna;
+    jsCodeOutput.appendChild(c);
+    
+    firstOne.compareDNA(secondOne);
+    
+    let d = document.createElement("p");
+    d.style.marginLeft = "2rem";
+    d.textContent = "Specimen " + firstOne._specimenNum + " likely to survive: " + firstOne.willLikelySurvive();
+    jsCodeOutput.appendChild(d);
+    
+    let storage = [];
+    let amount = 1;
+    let increment = 0;
+    do {
+        storage[increment] = pAequorFactory(amount, mockUpStrand());
+        if (storage[increment].willLikelySurvive) {
+        increment++;
+        amount++;
+        };
+    } while (amount<30);
+}
+
+mysteriousOrganisms.addEventListener("click", mysteriousOrganismsOutput);
+
+
+//Mixed Messages
+function mixedMessagesOutput() {
+    jsCodeOutput.innerHTML = " ";
+    jsCodeOutput.style.textAlign = "left";
+    //Pick random messages from Luck for the day, weather, daily quote
+
+    let randomNumber = (n) => Math.floor(Math.random() * n);
+
+    let luck = ["good", "bad", "neutral"];
+    let weather = [["sunny", "cloudy", "partly cloudy"],["rain", "fog", "snow", "hail", "thunderstorms"]];
+    let dailyQuote = ["'The secret of getting ahead is getting started.' -Mark Twain", "'It is hard to beat a person who never gives up.' -Babe Ruth", "'Everything you can imagine is real.' -Pablo Picasso", "'Do one thing every day that scares you.' -Eleanor Roosevelt", "'Smart people learn from everything and everyone, average people from their experiences, stupid people already have all the answers.' -Socrates"];
+
+    jsCodeOutput.innerHTML = "<p style='margin-left:2rem'>Today you will have " + luck[randomNumber(luck.length)] + " luck.</p>" +
+    "<p style='margin-left:2rem; line-height:normal'>The weather for today is " + weather[0][randomNumber(weather[0].length)] + " with a chance of " + weather[1][randomNumber(weather[1].length)] + ".</p>" +
+    "<p style='margin-left:2rem'>The quote of the day is: </p>" + 
+    "<p style='margin-left:2rem; line-height:normal'>" + dailyQuote[randomNumber(dailyQuote.length)] + "</p>";
+    
+    /*
+    let printIt = () => console.log(`Today you will have ${luck[randomNumber(luck.length)]} luck. 
+    \nThe weather for today is ${weather[0][randomNumber(weather[0].length)]} with a chance of ${weather[1][randomNumber(weather[1].length)]}. 
+    \nThe quote of the day is: ${dailyQuote[randomNumber(dailyQuote.length)]}`);
+
+    printIt();*/
+}
+
+mixedMessages.addEventListener("click", mixedMessagesOutput);

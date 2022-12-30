@@ -1,3 +1,5 @@
+function output() {
+
 function choose(play) {
     let roll = Math.floor(Math.random() * 3);
   
@@ -49,11 +51,9 @@ function choose(play) {
   console.log(victor);*/
 
 //Below for HTML
-function output() { 
 document.getElementById("jsCodeOutput").innerHTML = "<p>You throw " + user + " and computer throws " + comp + ".</p>" +
 "<p>" + victor + "</p>";
 document.getElementById("jsCodeOutput").style.textAlign="center";
 }
 
-let button = document.getElementById("rockPaperScissors");
-button.addEventListener("click", output);
+document.getElementById("rockPaperScissors").addEventListener("click", output);
