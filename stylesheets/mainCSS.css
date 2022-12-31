@@ -9,7 +9,6 @@ body {
     justify-content: center;
     margin: 0rem 15%;
     height: 47rem;
-    min-width: 70rem;
     background-color: antiquewhite;
 }
 
@@ -83,4 +82,15 @@ nav a {
     display: flex;
     align-items: flex-end;
     font-size: 0.75rem;
+}
+
+@media only screen and (orientation: portrait) {
+    #resumeTitle {
+        justify-content: center;
+    }
+
+    #aboutMe {
+        flex-direction: column;
+        align-items: center;
+    }
 }

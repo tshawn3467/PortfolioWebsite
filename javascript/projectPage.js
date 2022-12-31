@@ -39,7 +39,7 @@ function returnPage() {
     javascriptProjectPage.style.display = "none";
     webpageSection.style.display = "flex";
     javascriptSection.style.display = "flex";
-    document.getElementById("jsCodeText").innerHTML = "<p id='initialText'>SELECT A PROGRAM ON THE LEFT TO VIEW THE CODE HERE</p>";
+    document.getElementById("jsCodeText").innerHTML = "<p id='initialText'>SELECT A PROGRAM TO VIEW THE CODE HERE</p>";
     document.getElementById("jsCodeOutput").innerHTML = "<p id='initialText'>VIEW OUTPUT OF SELECTED PROGRAM HERE</p>";
 }
 

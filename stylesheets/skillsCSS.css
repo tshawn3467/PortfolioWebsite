@@ -7,6 +7,7 @@ body {
     align-items: center;
     justify-content: space-around;
     height: 46rem;
+    min-width: 15.5rem;
 }
 
 #navContainer {
