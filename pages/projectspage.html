@@ -6,6 +6,15 @@
         
     </head>
     <body>
+
+        <script>
+            function autoResize () {
+                document.getElementsByTagName('body')[0].style.height = (window.innerHeight) * 2 + 'px';
+            }
+            window.onresize = autoResize;
+            autoResize();
+        </script>
+
         <div id="navContainer">
             <nav>
                 <ul>
@@ -51,7 +60,7 @@
                 </figure>
             </div>
         </div>
-
+            <h6>SCROLL</h6>
         <div id="javascriptContainer">
             <div id="javascriptButtonContainer">
                 <h2 id="javascriptButton">Javascript</h2>

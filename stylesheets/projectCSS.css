@@ -3,7 +3,6 @@
 body {
     display: flex;
     flex-wrap: wrap;
-    height: 101rem;
     margin: 0rem;
     background-color: black;
 }
@@ -50,7 +49,7 @@ nav a {
     width: 100%;
     position: sticky;
     top: 9.1rem;
-    height: 50%;
+    height: 48%;
     row-gap: 3rem;
     z-index: 1;
     align-content: flex-start;
@@ -112,6 +111,12 @@ nav a {
     object-fit: contain;
 }
 
+h6 {
+    color: antiquewhite;
+    width: 100%;
+    text-align: center;
+}
+
 #javascriptContainer {
     display: flex;
     width: 100%;
@@ -122,6 +127,7 @@ nav a {
     height: 50%;
     z-index: 3;
     background-color: black;
+    border-top: 1px solid antiquewhite;
 }
 
 #javascriptButton {
@@ -243,8 +249,7 @@ nav a {
     background-color: antiquewhite;
 }
 
-@media only screen and (orientation: landscape) and (height < 500px) {
-
+@media only screen and (orientation: landscape) and (height < 700px) {
     body {
         height: 62rem;
     }
@@ -261,14 +266,6 @@ nav a {
 }
 
 @media only screen and (orientation: portrait) {
-    body {
-        height: 80rem;
-    }
-
-    #javascriptContainer {
-        height: 30%;
-    }
-
     .jsProjectContainer {
         height: 45%;
     }
@@ -276,5 +273,4 @@ nav a {
     #jsProjectList {
         margin: 0px 1rem;
     }
-
 }

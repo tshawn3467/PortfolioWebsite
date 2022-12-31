@@ -6,9 +6,17 @@
 </head>
 
 <body>
-    <navContainer>
+    <script>
+        function autoResize () {
+            document.getElementsByTagName('body')[0].style.height = window.innerHeight + 'px';
+        }
+        window.onresize = autoResize;
+        autoResize();
+    </script>
+    <div id="navContainer">
         <h1>Shawn Taylor</h1>
         <nav>
+
             <ul>
                 <li><a href="../pages/mainpage.html">About Me</a></li>
                 <li><a href="../pages/projectspage.html">Projects</a></li>
@@ -16,13 +24,83 @@
                 <li><a href="../pages/contact.html">Contact</a></li>
             </ul>
         </nav>
-    </navContainer>
+    </div>
     <h2 id="resumeTitle">About Me</h2>
     <div id="aboutMe">
         <div id="aboutMeText">
-            <p>
-                Fill-in this area with resume type.
-            </p>
+            <ul>
+                <h3 style="text-decoration:underline">Knowledge</h3>
+                <li>Full Stack Engineer Certification
+                    <ul>
+                        <li>Codecademy Online Code Learning Platform</li>
+                        <li>Completion Date</li>
+                    </ul>
+                </li>
+                <li>Associate's of Computer Science
+                    <ul>
+                        <li>Morrison University</li>
+                        <li>2010 - 2012</li>
+                    </ul>
+                </li>
+
+                <h3 style="text-decoration:underline">Work Experience</h3>
+                <li>Field Technician
+                    <ul>
+                        <li>Bancsource</li>
+                        <li>March 2020 - Present</li>
+                        <ul>
+                            <li>Fix and maintain banking equipment including ATMs and Smart Safes</li>
+                            <li>Bring newly installed ATMs live by installing and configuring software</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>IT Field Technician
+                    <ul>
+                        <li>Compucom</li>
+                        <li>April 2018 - March 2020</li>
+                        <ul>
+                            <li>Schedule appointments to run service tickets for various customers including Home Depot, Target,Caterpillar, Lowes, T-Mobile and State Farm</li>
+                            <li>Install/Reimage/Break fix POS terminals, printers, touchscreens, laptops and desktops</li>
+                            <li>Network, server, and telecommunication troubleshooting, support, and maintenance</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>Agilysys Manager
+                    <ul>
+                        <li>Dotty's Casino</li>
+                        <li>July 2017 - October 2017</li>
+                        <ul>
+                            <li>Manage POS database</li>
+                            <li>Troubleshoot POS and inventory control database software</li>
+                            <li>Consult with Agilysys software product development</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>IT Technician
+                    <ul>
+                        <li>Dotty's Casino</li>
+                        <li>June 2015 - July 2017</li>
+                        <ul>
+                            <li>Network setup and maintenance</li>
+                            <li>Network administration</li>
+                            <li>Employee account management</li>
+                            <li>Computer repair and maintenance</li>
+                            <li>Email exchange administration</li>
+                            <li>Manage POS registers</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>Slot Technician
+                    <ul>
+                        <li>Dotty's Casino</li>
+                        <li>January 2014 - June 2015</li>
+                        <ul>
+                            <li>Fix and maintain slot machines</li>
+                            <li>Repair broken machine parts for reuse</li>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
         </div>
         <img id="mainpic" src="../pics/mainpagePic.jpg" />
     </div>

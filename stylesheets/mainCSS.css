@@ -8,11 +8,10 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin: 0rem 15%;
-    height: 47rem;
     background-color: antiquewhite;
 }
 
-navContainer {
+#navContainer {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -22,7 +21,7 @@ navContainer {
     border-bottom: 2px solid black;
 }
 
-navContainer h1 {
+#navContainer h1 {
     width:50%;
 }
 
@@ -41,6 +40,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
+    color: black;
 }
 
 #resumeTitle {
@@ -62,14 +62,11 @@ nav a {
     width: 50%;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
+    overflow-y: scroll;
 }
 
 #aboutMeText h2 {
     margin-top: 0px;
-}
-
-#aboutMeText p {
-    font-size: 0.8rem;
 }
 
 #mainpic {
