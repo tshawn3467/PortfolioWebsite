@@ -19,6 +19,8 @@ navContainer {
     align-items: flex-start;
     align-content: flex-start;
     width: 100%;
+    height: 5rem;
+    border-bottom: 2px solid black;
 }
 
 navContainer h1 {
@@ -42,11 +44,6 @@ nav a {
     text-decoration: none;
 }
 
-#navLine {
-    border-top: .2rem solid;
-    width: 100%;
-}
-
 #resumeTitle {
     margin: 0rem;
     display: flex;
@@ -57,6 +54,8 @@ nav a {
 #aboutMe {
     display: flex;
     position: relative;
+    width: 100%;
+    height: 70%;
 }
 
 #aboutMeText {
@@ -77,7 +76,8 @@ nav a {
 #mainpic {
     height: auto;
     width: 50%;
-}
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;}
 
 #footer {
     display: flex;

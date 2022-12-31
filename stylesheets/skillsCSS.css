@@ -1,0 +1,91 @@
+html {
+    background-color: black;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 46rem;
+}
+
+#navContainer {
+    position: fixed;
+    width:100%;
+    top: 0rem;
+    z-index: 10;
+    background-color: black;
+    border-bottom: 2px solid antiquewhite;
+}
+
+nav {
+    display: inline-flex;
+    width: 100%;
+    padding: 0rem;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid antiquewhite;
+}
+
+nav ul {
+    display: inline-flex;
+    width: 100%;
+    list-style: none;
+    justify-content: space-evenly;
+    padding: 0rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+#navContainer h1 {
+    color: antiquewhite;
+    text-align: center;
+    padding: 1.34rem 0rem;
+    margin: 0px;
+}
+
+#skillsContainer {
+    display: flex;
+    height: 25rem;
+    width: 95rem;
+    min-width: 40rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+#top {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#middle {
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly;
+}
+
+#bottom {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#logoBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 5rem;
+    background-color: antiquewhite;
+}
+
+#logo {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid black;
+}

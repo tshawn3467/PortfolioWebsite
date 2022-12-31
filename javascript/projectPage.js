@@ -301,7 +301,7 @@ let mysteriousOrganismsText =
 "<p>console.log(`Second specimens DNA: ${secondOne._dna}`);</p>" +  
 "<p>firstOne.compareDNA(secondOne);</p>" +  
 "<p>console.log(`Specimen ${firstOne._specimenNum} likely to survive: ${firstOne.willLikelySurvive()}`);</p>" + 
-"<p>//Load 30 specimens into storage</p>" 
+"<p>//Load 30 specimens into storage</p>" +
 "<p>let storage = [];</p>" +
 "<p>let amount = 1;</p>" +
 "<p>let increment = 0;</p>" +
